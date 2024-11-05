@@ -1,0 +1,35 @@
+# Testing Notes for Text Editor Application
+
+## 1. TextEditorBO Module
+- **getFileNames**: 
+  - ECP: Empty database, database with single file, multiple files.
+  - BVA: Boundary cases for zero and maximum number of files.
+
+- **getFileContent**:
+  - ECP: Non-existent file, existing file with content, empty file.
+  - BVA: File content length at minimum (empty), moderate size, and maximum allowed size.
+
+- **saveToDatabase**:
+  - ECP: Valid and invalid file names, empty and non-empty content.
+  - BVA: Maximum and minimum allowed content size.
+
+## 2. TextFileDao Module
+- **getFileNames**:
+  - ECP: Database connection errors, valid retrieval, no files in the database.
+  - BVA: Maximum number of records retrieved.
+
+- **getFileContent**:
+  - ECP: Valid file name, invalid file name, file name with special characters.
+  - BVA: File content boundary limits.
+
+- **saveToDatabase**:
+  - ECP: Handling empty, valid, and invalid file names.
+  - BVA: Content length boundary values.
+
+## 3. TextEditorUI Module
+- **UI Operations**:
+  - ECP: Opening new files, saving content, deleting files.
+  - BVA: Testing the maximum number of tabs opened.
+- **Event Handling**:
+  - BVA: Boundary case for number of events processed in a session.
+  - ECP: Valid and invalid user inputs.
